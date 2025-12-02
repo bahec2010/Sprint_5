@@ -24,6 +24,23 @@ class TestBooksCollector:
         collector.add_new_book('Новая книга')
         
         assert collector.get_book_genre('Новая книга') == ''
+    # Проверка получения жанра книги по имени
+    def test_get_book_genre(self):
+        collector = BooksCollector()
+        collector.add_new_book('Тестовая книга')
+        collector.set_book_genre('Тестовая книга', 'Фантастика')
+        
+        assert collector.get_book_genre('Тестовая книга') == 'Фантастика'
+
+    # Проверка получения словаря книг и жанров
+    def test_get_books_genre(self):
+        collector = BooksCollector()
+        collector.add_new_book('Книга 1')
+        collector.set_book_genre('Книга 1', 'Фантастика')
+        
+        books_genre = collector.get_books_genre()
+        
+        assert books_genre['Книга 1'] == 'Фантастика'
 
     # Проверка, что книга с длинным названием не добавляется
     def test_add_new_book_with_long_name_not_added(self):
@@ -53,8 +70,16 @@ class TestBooksCollector:
         
         fantasy_books = collector.get_books_with_specific_genre('Фантастика')
         
-        # Проверяем, что возвращаются только книги нужного жанра
         assert fantasy_books == ['Книга 1', 'Книга 2']
+    # Книги без возрастного рейтинга присутствуют в списке книг для детей
+    def test_books_without_age_rating_are_in_children_list(self):
+        collector = BooksCollector()
+        collector.add_new_book('Детская книга')
+        collector.set_book_genre('Детская книга', 'Мультфильмы')
+        
+        children_books = collector.get_books_for_children()
+        
+        assert 'Детская книга' in children_books
 
     # Проверка получения книг по несуществующему жанру
     def test_get_books_with_specific_genre_nonexistent_genre(self):
@@ -93,9 +118,13 @@ class TestBooksCollector:
         
         assert 'Книга для удаления' not in collector.get_list_of_favorites_books()
 
-    # Проверка получения списка избранных книг, когда он пуст
-    def test_get_list_of_favorites_books_empty(self):
+    # Проверка получения списка избранных книг, когда он заполнен
+    def test_get_list_of_favorites_books_with_items(self):
         collector = BooksCollector()
+        collector.add_new_book('Книга 1')
+        collector.add_new_book('Книга 2')
+        collector.add_book_in_favorites('Книга 1')
+        collector.add_book_in_favorites('Книга 2')
         
         result = collector.get_list_of_favorites_books()
-        assert result == []
+        assert result == ['Книга 1', 'Книга 2']

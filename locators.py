@@ -1,0 +1,23 @@
+from selenium.webdriver.common.by import By
+
+
+LOGIN_AND_REGISTRATION_BUTTON = (By.XPATH, "//*[@id='root']/div/div[1]/div/button[1]")
+NO_ACCOUNT_BUTTON = (By.XPATH, "//*[@id='root']/div/div[2]/div[5]/form/div[3]/button[2]")
+EMAIL_INPUT = (By.XPATH, "/html/body/div/div/div[2]/div[5]/form/div[2]/div[1]/div/div/input")
+PASSWORD_INPUT = (By.XPATH, "/html/body/div/div/div[2]/div[5]/form/div[2]/div[2]/div/div/input")
+SUBMIT_PASSWORD_INPUT = (By.XPATH, "/html/body/div/div/div[2]/div[5]/form/div[2]/div[3]/div/div/input")
+CREATE_ACCOUNT_BUTTON = (By.XPATH, "/html/body/div/div/div[2]/div[5]/form/div[3]/button[1]")
+PROFILE_NAME = (By.XPATH, "/html/body/div/div/div[1]/div/div[1]/div/h3")
+USER_PHOTO = (By.XPATH, "/html/body/div/div/div[1]/div/div[1]/button/svg")
+LOGIN_BUTTON = (By.XPATH, "//*[@id='root']/div/div[2]/div[5]/form/div[3]/button[1]")
+LOGOUT_BUTTON = (By.XPATH, "//*[@id='root']/div/div[1]/div/div[1]/div/button")
+POST_ADVERTISEMENT = (By.XPATH, "//*[@id='root']/div/div[1]/div/button")
+POPUP_LOGIN_TO_POST_ADVERTISEMENT = (By.XPATH, "//*[@id='root']/div/div[2]/div[5]/form")
+NAME_OF_CARD = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/div[2]/div[1]/div/div/input")
+DESCRIPTION_OF_CARD = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/div[4]/div/textarea")
+COST_OF_CARD = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/div[5]/div/div/input")
+CATEGORY_DROPDOWN_OPEN = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/div[2]/div[2]/div[1]/button")
+BOOKS_CATEGORY = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/div[2]/div[2]/div[2]/button[2]")
+SECOND_HAND_RADIO_BUTTON = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/fieldset/div/div[2]/div")
+TO_PUBLISH_BUTTON = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/button")
+MY_ADVERTISEMENT_CARD = (By.XPATH, "//*[@id='root']/div/div[2]/div[4]/div/div[1]/div")

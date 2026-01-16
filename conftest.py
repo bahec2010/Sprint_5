@@ -24,7 +24,7 @@ def create_new_password():
 
 @pytest.fixture
 def registered_user():
-    creds = {'login': 'user333@mail.ru', 'password': '12345678'}
+    creds = {'login': 'user333@mail.ru', 'password': 'QAguru2026'}
     return creds
 
 @pytest.fixture
